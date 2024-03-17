@@ -1,4 +1,5 @@
 import os
+import sys
 from pathlib import Path
 import shutil
 
@@ -9,6 +10,9 @@ from get_directories import get_directory, get_dest_directory
 directory = get_directory()
 
 dest_directory = get_dest_directory()
+
+if not directory or not dest_directory:
+    sys.exit()
 
 os.chdir(directory)
 
