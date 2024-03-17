@@ -4,51 +4,57 @@ import shutil
 
 import ext_check
 
-os.chdir("C:\\Users\\User\\Downloads")
+from get_directories import get_directory, get_dest_directory
+
+directory = get_directory()
+
+dest_directory = get_dest_directory()
+
+os.chdir(directory)
 
 
 def organize():
     for file in os.listdir():
         if ext_check.is_video_file(file):
-            Path("F:\\Downloads\\Video").mkdir(exist_ok=True)
-            shutil.move(file, "F:\\Downloads\\Video")
+            Path(f"{dest_directory}\\Video").mkdir(exist_ok=True)
+            shutil.move(file, f"{dest_directory}\\Video")
         elif ext_check.is_image_file(file):
-            Path("F:\\Downloads\\Images").mkdir(exist_ok=True)
-            shutil.move(file, "F:\\Downloads\\Images")
+            Path(f"{dest_directory}\\Images").mkdir(exist_ok=True)
+            shutil.move(file, f"{dest_directory}\\Images")
         elif ext_check.is_audio_file(file):
-            Path("F:\\Downloads\\Audio").mkdir(exist_ok=True)
-            shutil.move(file, "F:\\Downloads\\Audio")
+            Path(f"{dest_directory}\\Audio").mkdir(exist_ok=True)
+            shutil.move(file, f"{dest_directory}\\Audio")
         elif ext_check.is_archive_file(file):
-            Path("F:\\Downloads\\Archives").mkdir(exist_ok=True)
-            shutil.move(file, "F:\\Downloads\\Archives")
+            Path(f"{dest_directory}\\Archives").mkdir(exist_ok=True)
+            shutil.move(file, f"{dest_directory}\\Archives")
         elif ext_check.is_excel_file(file):
-            Path("F:\\Downloads\\Excel").mkdir(exist_ok=True)
-            shutil.move(file, "F:\\Downloads\\Excel")
+            Path(f"{dest_directory}\\Excel").mkdir(exist_ok=True)
+            shutil.move(file, f"{dest_directory}\\Excel")
         elif ext_check.is_powerpoint_file(file):
-            Path("F:\\Downloads\\Presentations").mkdir(exist_ok=True)
-            shutil.move(file, "F:\\Downloads\\Presentations")
+            Path(f"{dest_directory}\\Presentations").mkdir(exist_ok=True)
+            shutil.move(file, f"{dest_directory}\\Presentations")
         elif ext_check.is_doc_file(file):
-            Path("F:\\Downloads\\Word").mkdir(exist_ok=True)
-            shutil.move(file, "F:\\Downloads\\Word")
+            Path(f"{dest_directory}\\Word").mkdir(exist_ok=True)
+            shutil.move(file, f"{dest_directory}\\Word")
         elif ext_check.is_pdf_file(file):
-            Path("F:\\Downloads\\PDF").mkdir(exist_ok=True)
-            shutil.move(file, "F:\\Downloads\\PDF")
+            Path(f"{dest_directory}\\PDF").mkdir(exist_ok=True)
+            shutil.move(file, f"{dest_directory}\\PDF")
         elif ext_check.is_txt_file(file):
-            Path("F:\\Downloads\\TXT").mkdir(exist_ok=True)
-            shutil.move(file, "F:\\Downloads\\TXT")
+            Path(f"{dest_directory}\\TXT").mkdir(exist_ok=True)
+            shutil.move(file, f"{dest_directory}\\TXT")
         elif ext_check.is_exe_file(file):
-            Path("F:\\Downloads\\EXE").mkdir(exist_ok=True)
-            shutil.move(file, "F:\\Downloads\\EXE")
+            Path(f"{dest_directory}\\EXE").mkdir(exist_ok=True)
+            shutil.move(file, f"{dest_directory}\\EXE")
         elif ext_check.is_html_file(file):
-            Path("F:\\Downloads\\HTML").mkdir(exist_ok=True)
-            shutil.move(file, "F:\\Downloads\\HTML")
+            Path(f"{dest_directory}\\HTML").mkdir(exist_ok=True)
+            shutil.move(file, f"{dest_directory}\\HTML")
         elif ext_check.is_torrent_file(file):
-            Path("F:\\Downloads\\Torrents").mkdir(exist_ok=True)
-            shutil.move(file, "F:\\Downloads\\Torrents")
+            Path(f"{dest_directory}\\Torrents").mkdir(exist_ok=True)
+            shutil.move(file, f"{dest_directory}\\Torrents")
         else:
             if Path(file).is_file():
-                Path("F:\\Downloads\\Other").mkdir(exist_ok=True)
-                shutil.move(file, "F:\\Downloads\\Other")
+                Path(f"{dest_directory}\\Other").mkdir(exist_ok=True)
+                shutil.move(file, f"{dest_directory}\\Other")
 
 
 if __name__ == "__main__":
